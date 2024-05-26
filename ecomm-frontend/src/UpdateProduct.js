@@ -1,6 +1,10 @@
+import Header from "./Header";
 function UpdateProduct() {
   return (
-    <div>UpdateProduct</div>
-  )
+    <>
+      <Header />
+      <div>UpdateProduct</div>
+    </>
+  );
 }
-export default UpdateProduct
+export default UpdateProduct;

@@ -1,6 +1,10 @@
+import Header from "./Header";
 function AddProduct() {
   return (
-    <div>AddProduct</div>
-  )
+    <>
+      <Header />
+      <div>AddProduct</div>
+    </>
+  );
 }
-export default AddProduct
+export default AddProduct;

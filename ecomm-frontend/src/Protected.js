@@ -1,20 +1,21 @@
-import Header from "./Header";
 import { useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login(props) {
+    let Cmp = props.Cmp
   const navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem("user-info")) {
-      navigate("/add");
+    if (!localStorage.getItem("user-info")) {
+      navigate("/login");
     }
   }, []);
 
   return (
     <>
-      <Header />
-      <div>Login</div>
+      <div>
+        <Cmp/>
+      </div>
     </>
   );
 }
