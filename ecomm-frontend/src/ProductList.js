@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import { Table } from "react-bootstrap";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
 function ProductList() {
   const [data, setData] = useState("");
@@ -14,6 +15,11 @@ function ProductList() {
     let res = await axios.post("http://127.0.0.1:8000/api/list");
     console.log(res.data);
     setData(res.data);
+  };
+
+  const deleteProd = async (id) => {
+    await axios.delete("http://127.0.0.1:8000/api/delete/" + id);
+    standalone();
   };
 
   return (
@@ -31,6 +37,8 @@ function ProductList() {
               <th>Image</th>
               <th>Description</th>
               <th>Price</th>
+              <th>Action</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -47,6 +55,23 @@ function ProductList() {
                   </th>
                   <th>{d.description}</th>
                   <th>{d.price}</th>
+                  <th>
+                    <button
+                      onClick={() => {
+                        deleteProd(d.id);
+                      }}
+                      className="btn btn-danger"
+                    >
+                      Delete
+                    </button>
+                  </th>
+                  <th>
+                      <Link to={"/update/"+d.id} style={{ color: "white", textDecoration:'none' }}>
+                    <button className="btn btn-success">
+                        Update
+                    </button>
+                      </Link>
+                  </th>
                 </tr>
               ))}
           </tbody>

@@ -32,6 +32,7 @@ function Register() {
   return (
     <>
       <Header />
+      <br />
       <div className="col-sm-6 offset-sm-3">
         <h1>User Sign up</h1>
         <input

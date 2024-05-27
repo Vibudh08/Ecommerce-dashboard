@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Protected Cmp={ProductList} />} />
           <Route path="/add" element={<Protected Cmp={AddProduct} />} />
-          <Route path="/update" element={<Protected Cmp={UpdateProduct} />} />
+          <Route path="/update/:id" element={<Protected Cmp={UpdateProduct} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

@@ -23,11 +23,6 @@ function AddProduct() {
     await axios
       .post("http://127.0.0.1:8000/api/addproduct", formData)
       .then((response) => {
-        // console.log(response);
-        setName("");
-        setFile(null); // Reset file input
-        setPrice("");
-        setDescription("");
         navigate("/")
       })
       .catch((error)=>console.log(error))
@@ -35,6 +30,7 @@ function AddProduct() {
   return (
     <>
       <Header />
+      <br />
       <h1>Add Product</h1>
       <div className="col-sm-6 offset-sm-3">
         <br />

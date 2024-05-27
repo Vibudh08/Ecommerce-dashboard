@@ -13,4 +13,10 @@ Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
 
 Route::post("/addproduct",[ProductController::class, "addProduct"]);
+
 Route::post("/list",[ProductController::class,"list"]);
+
+Route::delete("/delete/{id}",[ProductController::class,"delete"]);
+
+Route::get("/getProduct/{id}",[ProductController::class,"getProduct"]);
+Route::put("/updateProduct/{id}",[ProductController::class, "updateProduct"]);
