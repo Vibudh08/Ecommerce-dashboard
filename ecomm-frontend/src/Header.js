@@ -14,11 +14,12 @@ function Header() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand> Navbar</Navbar.Brand>
-          <Nav style={{ marginLeft: '680px' }} className="mr-auto nav_bar_wrapper">
+          <Nav style={{ marginRight: '-550px' }} className="mr-auto nav_bar_wrapper">
             {localStorage.getItem("user-info") ? (
               <>
                 <Link to="/">Product List</Link>
                 <Link to="/add">Add Product</Link>
+                <Link to="/search">Search Product</Link>
               </>
             ) : (
               <>
