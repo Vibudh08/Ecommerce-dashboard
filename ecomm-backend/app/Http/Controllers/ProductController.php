@@ -11,9 +11,12 @@ class ProductController extends Controller
         $product->name = $req->name;
         $product->description = $req->description;
         $product->price = $req->price;
-        $product->file_path = $req->file("img")->store("products");
+        $product->file_path = $req->file("file")->store("products");
         $product->save();
         return $product;
+    }
+    function list(){
+        return Product::all();
     }
 }
 

@@ -7,7 +7,7 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      navigate("/add");
+      navigate("/");
     }
   }, []);
 
@@ -23,7 +23,7 @@ function Login() {
       .then((response) => {
         // console.log(response.data);
         localStorage.setItem("user-info", JSON.stringify(response.data));
-        navigate("/add");
+        navigate("/");
       });
   };
 

@@ -13,3 +13,4 @@ Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
 
 Route::post("/addproduct",[ProductController::class, "addProduct"]);
+Route::post("/list",[ProductController::class,"list"]);
