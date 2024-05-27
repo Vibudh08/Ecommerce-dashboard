@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const user = JSON.parse(localStorage.getItem("user-info"));
   let navigate = useNavigate()
   const logout = ()=>{
     localStorage.clear()
     navigate('/login')
   }
-  const user = JSON.parse(localStorage.getItem("user-info"));
   return (
     <div>
       <Navbar bg="dark" data-bs-theme="dark">

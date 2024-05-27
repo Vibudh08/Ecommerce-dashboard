@@ -23,7 +23,7 @@ function Register() {
     await axios
       .post("http://127.0.0.1:8000/api/register", item)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         localStorage.setItem("user-info", JSON.stringify(response.data));
         navigate("/add");
       });
@@ -32,7 +32,6 @@ function Register() {
   return (
     <>
       <Header />
-
       <div className="col-sm-6 offset-sm-3">
         <h1>User Sign up</h1>
         <input
@@ -52,7 +51,7 @@ function Register() {
         />
         <br />
         <input
-          type="text"
+          type="password"
           value={password}
           placeholder="Enter Password"
           onChange={(e) => setPassword(e.target.value)}
