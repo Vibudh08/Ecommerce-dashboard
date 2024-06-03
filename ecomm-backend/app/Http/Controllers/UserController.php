@@ -6,25 +6,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
-use function Laravel\Prompts\password;
-
 class UserController extends Controller
 {
     function register(Request $req){
         $user = new User;
-        $user->name = $req->input('name');
-        $user->email = $req->input('email');
-        $user->password = Hash::make($req->input('password'));
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
         $user->save();
         return $user;
     }
-    function login(Request $req){
-        $user = User::where('email',$req->email)->first();
-        if(!$user || !Hash::check($req->password,$user->password)){
-            return response([
-                'error'=>["Email or password not match"]
-            ]);
+    function login(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+
+        $user = User::where('email', $email)->first();
+        if ($email == $user->email and Hash::check($password, $user->password)) {
+            return $user;
         }
-        return $user;
+        else{
+            return "wrong";
+        }
     }
+
 }

@@ -13,7 +13,7 @@ function ProductList() {
 
   const standalone = async () => {
     let res = await axios.post("http://127.0.0.1:8000/api/list");
-    console.log(res.data);
+    // console.log(res.data);
     setData(res.data);
   };
 

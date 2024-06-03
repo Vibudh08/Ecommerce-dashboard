@@ -19,7 +19,8 @@ class ProductController extends Controller
     }
     function list()
     {
-        return Product::all();
+        $result = Product::all();
+        return $result;
     }
     function delete($id)
     {

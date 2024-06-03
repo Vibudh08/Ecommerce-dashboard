@@ -13,8 +13,8 @@ function Header() {
     <div>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand> Navbar</Navbar.Brand>
-          <Nav style={{ marginRight: '-550px' }} className="mr-auto nav_bar_wrapper">
+          <Navbar.Brand> Ecommerce Dashboard</Navbar.Brand>
+          <Nav style={{ marginRight: '-40%' }} className="mr-auto nav_bar_wrapper">
             {localStorage.getItem("user-info") ? (
               <>
                 <Link to="/">Product List</Link>
